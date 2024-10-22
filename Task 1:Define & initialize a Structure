@@ -1,0 +1,27 @@
+//Code: Define and initialize a Structure
+//Author: Saba Raushan Hussain Date: 22.10.24
+
+
+#include <stdio.h>
+
+struct Student {
+    char name[50];  
+    int age;      
+    float grade; 
+};
+
+void displayStudent(struct Student student) {
+    printf("Student Information:\n");
+    printf("Name: %s\n", student.name);
+    printf("Age: %d\n", student.age);
+    printf("Grade: %.2f\n", student.grade);
+}
+
+int main() {
+    
+    struct Student student1 = {"Riya Dutta", 21, 92.3};
+
+    displayStudent(student1);
+
+    return 0;
+}
