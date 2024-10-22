@@ -1,0 +1,40 @@
+//Code: Write a program that initializes the library and displays the list of books.
+//Author: Saba Raushan Hussain Date: 22.10.24
+
+
+#include <stdio.h>
+#include <string.h>
+
+struct Book {
+    char title[50];
+    char author[50];
+    int publicationYear;
+};
+
+struct Library {
+    struct Book books[3]; 
+    int bookCount;        
+};
+
+
+void displayBooks(const struct Library *library) {
+    printf("\n Details of Books in the Library:\n");
+    for (int i = 0; i < library->bookCount; i++) {
+        printf("%d. %s by %s (%d)\n", i + 1, library->books[i].title, library->books[i].author, library->books[i].publicationYear);
+    }
+}
+
+int main() {
+    struct Library myLibrary = {
+        .books = {
+            {"The Road", "Cormac McCarthy", 2006},
+            {"Life of Pi", "Yann Martel", 2001},
+            {"The Glass Castle", "Jeannette Walls", 2005}
+        },
+        .bookCount = 3 
+    };
+
+    displayBooks(&myLibrary);
+
+    return 0;
+}
