@@ -1,40 +1,33 @@
-//Code: Write a program that initializes the library and displays the list of books.
+//Code: Create a structure to represent a book which includes fields for title author and publication year. Additionally ceate another structure for a library that contains an array of books. Write a program that initializes library and displays list of books.
 //Author: Saba Raushan Hussain Date: 22.10.24
 
 
-#include <stdio.h>
-#include <string.h>
-
+#include<stdio.h>
 struct Book {
-    char title[50];
-    char author[50];
-    int publicationYear;
+    char title[100];
+    char author[100];
+    int Year;
 };
-
 struct Library {
-    struct Book books[3]; 
-    int bookCount;        
+    struct Book books[100];  
+    int Count;           
 };
-
-
-void displayBooks(const struct Library *library) {
-    printf("\n Details of Books in the Library:\n");
-    for (int i = 0; i < library->bookCount; i++) {
-        printf("%d. %s by %s (%d)\n", i + 1, library->books[i].title, library->books[i].author, library->books[i].publicationYear);
+void displayLibrary(struct Library library) {
+    printf("\nLibrary contains foolowing books:\n");
+    for (int i = 0; i < library.Count; i++) {
+        printf("  Title: %s\n", library.books[i].title);
+        printf("  Author: %s\n", library.books[i].author);
+        printf("  Publication Year: %d\n", library.books[i].Year);
     }
 }
-
 int main() {
-    struct Library myLibrary = {
-        .books = {
-            {"The Road", "Cormac McCarthy", 2006},
-            {"Life of Pi", "Yann Martel", 2001},
-            {"The Glass Castle", "Jeannette Walls", 2005}
-        },
-        .bookCount = 3 
-    };
-
-    displayBooks(&myLibrary);
-
-    return 0;
+    struct Library library;
+    printf("Enter the number of books in the library: ");
+    scanf("%d", &library.Count);
+    for (int i = 0; i < library.Count; i++) {
+        printf("Enter details for Book:\n");
+        printf("  Title:\n author : \n published year: \n");
+        scanf(" %s %s %d", library.books[i].title,library.books[i].author,&library.books[i].Year);  
+    }
+    displayLibrary(library);
 }
