@@ -12,7 +12,7 @@ struct student
 void student_details(struct student);
 int main()
 {
-    struct student s1 = {"Pritish Sarkar",23,'A'};
+    struct student s1 = {"Riya Dutta",23,'A'};
     student_details(s1);
 }
 void student_details(struct student s)
