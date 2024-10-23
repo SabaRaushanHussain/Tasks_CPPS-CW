@@ -2,22 +2,29 @@
 //Author: Saba Raushan Hussain Date: 22.10.24
 
 #include<stdio.h>
-#include<string.h>
 struct student 
-    {
-        char name[25];
-        int age;
-        char grade;
-    };
-void student_details(struct student);
-int main()
 {
-    struct student s1 = {"Riya Dutta",23,'A'};
-    student_details(s1);
+char name[25];
+int age;
+char grade[25];
+
+};
+main()
+{
+struct student x;
+printf("Student Details:\n");
+printf("Enter student name:\n");
+scanf("%s",x.name);
+printf("Enter student age:\n");
+scanf("%d",&x.age);
+printf("Enter student grade:\n");
+scanf("%s",x.grade);
+display(x);
 }
-void student_details(struct student s)
+display(struct student x)
 {
-    printf("Name of the student : %s\n",s.name);
-    printf("Age : %d\n",s.age);
-    printf("Grade : %c\n",s.grade);
+printf("Student name:%s\n",x.name);
+printf("Student age:%d\n",x.age);
+printf("Student grade:%s\n",x.grade);
+
 }
