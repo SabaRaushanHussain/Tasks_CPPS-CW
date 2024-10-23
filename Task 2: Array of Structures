@@ -1,4 +1,4 @@
-//Code: C program that allows the user input information for multiple students and then displays the details for each student.
+//Code: Extend the previous task by creating an array of Student structures. Write a program that allows the user to input information for multiple students and then displays the details for each student.
 //Author: Saba Raushan Hussain 
 
 #include <stdio.h>
